@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:screenOrientation="landscape"
     tools:context="com.jinxin.beonesmartdesktop.activity.MainActivity">
 
     <include layout="@layout/main_navbar"/>
