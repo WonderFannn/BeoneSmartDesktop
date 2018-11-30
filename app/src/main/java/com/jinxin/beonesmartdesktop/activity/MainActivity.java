@@ -23,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
     @BindView(R.id.btn_navbar_home) LinearLayout mBtnNavbarHome;
     @BindView(R.id.btn_navbar_recreation) LinearLayout mBtnNavbarRecreation;
@@ -59,6 +59,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mBtnNavbarApplication.setOnClickListener(this);
         mBtnNavbarMine.setOnClickListener(this);
         mBtnNavbarSetting.setOnClickListener(this);
+
+        mBtnNavbarHome.setOnFocusChangeListener(this);
+        mBtnNavbarRecreation.setOnFocusChangeListener(this);
+        mBtnNavbarDevices.setOnFocusChangeListener(this);
+        mBtnNavbarApplication.setOnFocusChangeListener(this);
+        mBtnNavbarMine.setOnFocusChangeListener(this);
+        mBtnNavbarSetting.setOnFocusChangeListener(this);
 
         mFragments = new ArrayList<>();
         mFragments.add(new HomeFragment());
@@ -150,8 +157,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.btn_navbar_application:selectTab(3);break;
             case R.id.btn_navbar_mine:selectTab(4);break;
             case R.id.btn_navbar_setting:selectTab(5);break;
+            default:break;
         }
 
 
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+//        if (hasFocus){
+//            switch (v.getId()){
+//                case R.id.btn_navbar_home:selectTab(0);break;
+//                case R.id.btn_navbar_recreation:selectTab(1);break;
+//                case R.id.btn_navbar_devices:selectTab(2);break;
+//                case R.id.btn_navbar_application:selectTab(3);break;
+//                case R.id.btn_navbar_mine:selectTab(4);break;
+//                case R.id.btn_navbar_setting:selectTab(5);break;
+//            }
+//        }
     }
 }
