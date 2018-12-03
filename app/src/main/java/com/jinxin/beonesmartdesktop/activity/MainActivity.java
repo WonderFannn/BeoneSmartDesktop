@@ -122,7 +122,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void selectTab(int i) {
         resetBackground();
-        //根据点击的Tab设置对应的ImageButton为绿色
         switch (i) {
             case 0:
                 mBtnNavbarHome.setBackground(getDrawable(R.drawable.navbar_background_selected));

@@ -21,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true"
         android:background="@drawable/navbar_background"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -51,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true"
         android:background="@drawable/navbar_background"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -81,8 +81,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true"
         android:background="@drawable/navbar_background"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -111,8 +111,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true"
         android:background="@drawable/navbar_background"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -141,8 +141,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true"
         android:background="@drawable/navbar_background"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -171,8 +171,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="true"
         android:background="@drawable/navbar_background"
+        android:focusable="true"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 

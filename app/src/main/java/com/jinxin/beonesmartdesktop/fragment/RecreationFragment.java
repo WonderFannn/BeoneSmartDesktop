@@ -25,7 +25,7 @@ public class RecreationFragment extends Fragment implements View.OnFocusChangeLi
     @BindView(R.id.btn_recreation_child) ImageView mBtnRecreationChild;
     @BindView(R.id.btn_recreation_sports) ImageView mBtnRecreationSports;
     @BindView(R.id.btn_recreation_cartoon) ImageView mBtnRecreationCartoon;
-    @BindView(R.id.btn_recreation_documentary) ImageView mBtnRecreationDocumetary;
+    @BindView(R.id.btn_recreation_documentary) ImageView mBtnRecreationDocumentary;
     @BindView(R.id.btn_recreation_opera) ImageView mBtnRecreationOpera;
     @BindView(R.id.btn_recreation_app_recommend) ImageView mBtnRecreationAppRecommend;
 
@@ -49,7 +49,7 @@ public class RecreationFragment extends Fragment implements View.OnFocusChangeLi
         mBtnRecreationChild.setOnClickListener(this);
         mBtnRecreationSports.setOnClickListener(this);
         mBtnRecreationCartoon.setOnClickListener(this);
-        mBtnRecreationDocumetary.setOnClickListener(this);
+        mBtnRecreationDocumentary.setOnClickListener(this);
         mBtnRecreationOpera.setOnClickListener(this);
         mBtnRecreationAppRecommend.setOnClickListener(this);
         
@@ -61,7 +61,7 @@ public class RecreationFragment extends Fragment implements View.OnFocusChangeLi
         mBtnRecreationChild.setOnFocusChangeListener(this);
         mBtnRecreationSports.setOnFocusChangeListener(this);
         mBtnRecreationCartoon.setOnFocusChangeListener(this);
-        mBtnRecreationDocumetary.setOnFocusChangeListener(this);
+        mBtnRecreationDocumentary.setOnFocusChangeListener(this);
         mBtnRecreationOpera.setOnFocusChangeListener(this);
         mBtnRecreationAppRecommend.setOnFocusChangeListener(this);
     }

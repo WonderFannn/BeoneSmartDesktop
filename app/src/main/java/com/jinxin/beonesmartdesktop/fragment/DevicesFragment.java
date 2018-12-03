@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.jinxin.beonesmartdesktop.R;
 
+import butterknife.ButterKnife;
+
 public class DevicesFragment extends Fragment {
 
     @Nullable
@@ -16,6 +18,7 @@ public class DevicesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_devices, container, false);
+        ButterKnife.bind(this, view);
         return view;
     }
 }
