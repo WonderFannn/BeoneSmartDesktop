@@ -1,5 +1,8 @@
 package com.jinxin.beonesmartdesktop.fragment;
 
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.jinxin.beonesmartdesktop.R;
 
@@ -16,9 +20,12 @@ import butterknife.ButterKnife;
 
 public class HomeFragment extends Fragment implements View.OnClickListener, View.OnFocusChangeListener {
 
-    @BindView(R.id.btn_home_video) FrameLayout mBtnHomeVideo;
-    @BindView(R.id.btn_home_music) FrameLayout mBtnHomeMusic;
-    @BindView(R.id.btn_home_weather) FrameLayout mBtnHomeWeather;
+    @BindView(R.id.btn_home_video)
+    FrameLayout mBtnHomeVideo;
+    @BindView(R.id.btn_home_music)
+    FrameLayout mBtnHomeMusic;
+    @BindView(R.id.btn_home_weather)
+    FrameLayout mBtnHomeWeather;
 
 
     @Nullable
@@ -42,18 +49,29 @@ public class HomeFragment extends Fragment implements View.OnClickListener, View
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btn_home_video:
+                openActivity("com.ktcp.tvvideo");
+                break;
+            case R.id.btn_home_music:
+                openActivity("com.tencent.qqmusictv");
+                break;
+            case R.id.btn_home_weather:
+                Toast.makeText(getActivity(), "天气功能开发中", Toast.LENGTH_LONG).show();
+            default:break;
+        }
 
     }
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
-        if (hasFocus){
+        if (hasFocus) {
             ViewCompat.animate(v)
                     .setDuration(200)
                     .scaleX(1.1f)
                     .scaleY(1.1f)
                     .start();
-        }else {
+        } else {
             ViewCompat.animate(v)
                     .setDuration(200)
                     .scaleX(1.0f)
@@ -61,4 +79,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener, View
                     .start();
         }
     }
+
+    private void openActivity(String packname) {
+
+        PackageManager packageManager = getActivity().getPackageManager();
+        if(checkPackInfo(packname)) {
+            Intent intent = packageManager.getLaunchIntentForPackage(packname);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getActivity(), "没有安装" + packname, Toast.LENGTH_LONG).show();
+        }
+    }
+    /**
+     * 检查包是否存在
+     */
+    private boolean checkPackInfo(String packname) {
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = getActivity().getPackageManager().getPackageInfo(packname, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return packageInfo != null;
+    }
+
 }

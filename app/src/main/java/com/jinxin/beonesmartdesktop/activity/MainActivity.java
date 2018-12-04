@@ -174,5 +174,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 //                case R.id.btn_navbar_setting:selectTab(5);break;
 //            }
 //        }
+
     }
 }

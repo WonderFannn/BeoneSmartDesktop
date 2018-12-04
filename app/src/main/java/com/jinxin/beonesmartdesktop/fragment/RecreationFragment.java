@@ -1,5 +1,8 @@
 package com.jinxin.beonesmartdesktop.fragment;
 
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.jinxin.beonesmartdesktop.R;
 
@@ -85,6 +89,32 @@ public class RecreationFragment extends Fragment implements View.OnFocusChangeLi
 
     @Override
     public void onClick(View v) {
+
+        openActivity("com.zbmv");
         
+    }
+
+
+    private void openActivity(String packname) {
+
+        PackageManager packageManager = getActivity().getPackageManager();
+        if(checkPackInfo(packname)) {
+            Intent intent = packageManager.getLaunchIntentForPackage(packname);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getActivity(), "没有安装" + packname, Toast.LENGTH_LONG).show();
+        }
+    }
+    /**
+     * 检查包是否存在
+     */
+    private boolean checkPackInfo(String packname) {
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = getActivity().getPackageManager().getPackageInfo(packname, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return packageInfo != null;
     }
 }
