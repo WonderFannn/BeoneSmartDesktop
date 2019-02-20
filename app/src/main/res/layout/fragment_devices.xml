@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -48,10 +49,12 @@
                 android:textSize="24sp" />
 
             <ListView
+                android:id="@+id/lv_gateway"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginLeft="20dp"
-                android:layout_weight="4" />
+                android:layout_weight="4"
+                android:entries="@array/names" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,15 +74,30 @@
                 android:src="@drawable/devices_img_networking" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <ListView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="4" />
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="      50          45          5"
+                android:textColor="#fff"
+                android:textSize="36sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:gravity="top|center_vertical"
+                android:text="          总设备              运行设备              故障设备"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <ListView
+                android:id="@+id/lv_devices"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="3.5"
+                android:entries="@array/names2" />
         </LinearLayout>
     </LinearLayout>
 
